@@ -35,7 +35,7 @@ class MonitorServer(Process):
         3. 计算带宽 并将速度转换成单位 MB/s
         4. 将带宽数据返回给客户端
     """
-    def __init__(self, ip, port=9922, interval=3):
+    def __init__(self, ip, port, interval=3):
         super(MonitorServer, self).__init__()
         self.ip = ip
         self.port = port

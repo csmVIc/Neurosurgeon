@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     while True:
         # 开启：带宽监测服务端
-        monitor_ser = MonitorServer(ip=ip)
+        monitor_ser = MonitorServer(ip=ip,port=port)
         monitor_ser.start()
         monitor_ser.join()
 

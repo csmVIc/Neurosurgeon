@@ -49,7 +49,7 @@ if __name__ == '__main__':
     # 如果没有两个设备测试的条件 可以使用下面的方式 将带宽自定义
     # bandwidth_value = 10  #Mbps
     bandwidth_value = multiprocessing.Value('d', 0.0)
-    monitor_cli = MonitorClient(ip=ip, bandwidth_value=bandwidth_value)
+    monitor_cli = MonitorClient(ip=ip,port=port, bandwidth_value=bandwidth_value)
     monitor_cli.start()
 
     # 等待子进程结束后获取到带宽数据

@@ -180,6 +180,7 @@ def send_data(conn, x, msg="msg", show=True):
     :param show: 是否展示数据通信消息
     :return:
     """
+    re = conn.recv(40).decode()
     send_x = pickle.dumps(x)
     conn.sendall(pickle.dumps(len(send_x)))
     resp_len = conn.recv(1024).decode()
@@ -207,6 +208,8 @@ def get_data(conn):
     :return: 解析后的数据 和 获取数据消耗的时延
     """
     # 接收数据长度
+
+    conn.sendall("begin".encode())
     data_len = pickle.loads(conn.recv(1024))
     conn.sendall("yes len".encode())
 

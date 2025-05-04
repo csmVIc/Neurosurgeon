@@ -14,7 +14,7 @@ class MonitorClient(Process):
         1. 生成数据并发送给服务端 由服务端记录时间
         2. 获取数据的传输时延 使用进程通信 - 供边缘端进行模型划分
     """
-    def __init__(self, ip, bandwidth_value, interval=3):
+    def __init__(self, ip, bandwidth_value,port, interval=3):
         super(MonitorClient, self).__init__()
         self.ip = ip
         self.bandwidth_value = bandwidth_value

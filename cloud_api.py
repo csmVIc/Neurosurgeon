@@ -45,6 +45,6 @@ if __name__ == '__main__':
         # 开启服务端进行监听
         socket_server = net_utils.get_socket_server(ip,port)
         net_utils.start_server(socket_server,device)
-
+        
         monitor_ser.terminate()
 
